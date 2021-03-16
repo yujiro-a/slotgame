@@ -23,6 +23,7 @@ while true
       end
     end
   end
+  while true
   puts "-----------------------"
   puts "残りのコイン数は#{coin}枚です"
   puts "ポイント:#{point}"
@@ -30,17 +31,28 @@ while true
   puts "1(10コイン) 2(30コイン) 3(50コイン) 4(やめとく)"
   bet = [10,30,50]
   puts "-----------------------"
-  while true
     play = gets.chomp
     if play == "1"
+      if coin < bet[0]
+        puts "コインが不足しています。\n他の選択肢を選んでください。"
+        next
+      end
       coin -= bet[0]
       play = bet[0]
       break
     elsif play == "2"
+      if coin < bet[1]
+        puts "コインが不足しています。\n他の選択肢を選んでください。"
+        next
+      end
       coin -= bet[1]
       play = bet[1]
       break
     elsif play == "3"
+      if coin < bet[2]
+        puts "コインが不足しています。\n他の選択肢を選んでください。"
+        next
+      end
       coin -= bet[2]
       play = bet[2]
       break
